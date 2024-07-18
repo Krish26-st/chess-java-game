@@ -1,6 +1,8 @@
 public class Checkmate {
     public boolean isInCheck(String color, Board board) {
         int[] kingPosition = findKing(color, board);
+        if (kingPosition == null) return false; // No king found
+
         int kingX = kingPosition[0];
         int kingY = kingPosition[1];
 

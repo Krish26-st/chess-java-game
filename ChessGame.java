@@ -30,6 +30,11 @@ public class ChessGame {
             System.out.print("Enter move (e.g., e2 e4): ");
             String move = scanner.nextLine();
             String[] parts = move.split(" ");
+            if (parts.length != 2) {
+                System.out.println("Invalid input format. Please enter the move in the format 'e2 e4'.");
+                continue;
+            }
+
             int startX = parts[0].charAt(1) - '1';
             int startY = parts[0].charAt(0) - 'a';
             int endX = parts[1].charAt(1) - '1';
@@ -52,6 +57,7 @@ public class ChessGame {
                 System.out.println("Invalid move, try again.");
             }
         }
+        scanner.close();
     }
 
     public static void main(String[] args) {
